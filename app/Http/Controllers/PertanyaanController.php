@@ -14,7 +14,7 @@ class PertanyaanController extends Controller
     }
 
     public function create(){
-
+    	return view('pertanyaan.form');
     }//
 
     public function store(){

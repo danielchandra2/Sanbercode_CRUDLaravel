@@ -27,6 +27,6 @@
         <td>july@example.com</td>
       </tr>
     </tbody>
-  </table>
+  </table> 
 
 @endsection

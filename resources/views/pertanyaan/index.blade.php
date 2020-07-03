@@ -1,32 +1,36 @@
 @extends('master')
 
 @section('content')
+<div class='ml-3 mt-3'>
+<h1>Data Tabel Pertanyaan</h1>
 
-<table class="table">
-    <thead>
-      <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Email</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-      </tr>
-      <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>mary@example.com</td>
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
-      </tr>
-    </tbody>
-  </table> 
+                <table class="table table-bordered">
+                  <thead>                  
+                    <tr>
+                      <th style="width: 10px">#</th>
+                      <th>Pemberi Pertanyaan</th>
+                      <th>Judul</th>
+                      <th>Isi</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @foreach($pertanyaan as $key=> $pertanyaan)
+                      <tr>
+                        <td>{{ $key+1 }}</td>
+                        <td>{{ $pertanyaan->pemberi_pertanyaan }}</td>
+                        <td>{{ $pertanyaan->judul }}</td>
+                        <td>{{ $pertanyaan->isi }}</td>
+                        <td>
+                          <a href="/pertanyaan/{{ $pertanyaan->id }}" class="btn btn-sm btn-info">Detail Pertanyaan</a>
+                          <a href="/pertanyaan/{{ $pertanyaan->id }}/edit" class="btn btn-sm btn-default">Edit Pertanyaan</a>
+                        </td>
+                      </tr>
+                    @endforeach
+                  </tbody>
+                </table>
+              
+  <a href="/pertanyaan/create" class="btn btn-primary">Buat Pertanyaan Baru</a> 
 
+</div>
 @endsection

@@ -19,8 +19,11 @@ Route::get('/', function () {
 
 Route::get('/pertanyaan', 'PertanyaanController@index');
 Route::get('/pertanyaan/create', 'PertanyaanController@create');
-
+Route::get('/pertanyaan/{id}', 'PertanyaanController@show');
+Route::get('/pertanyaan/{id}/edit', 'PertanyaanController@edit');
 Route::post('/pertanyaan', 'PertanyaanController@store');
+Route::put('/pertanyaan/{id}', 'PertanyaanController@update');
+
 
 Route::get('/jawaban/{pertanyaan_id}', 'JawabanController@index');
 Route::post('/jawaban/{pertanyaan_id}', 'JawabanController@index');

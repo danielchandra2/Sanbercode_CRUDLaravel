@@ -11,9 +11,26 @@ class PertanyaanModel{
 	}
 
 	public static function save($data){
-		$new_item = DB::table('pertanyaan')->insert($data);
+		unset($data["_token"]);
+		$new_pertanyaan = DB::table('pertanyaan')->insert($data);
 
-		return $new_item;
+		return $new_pertanyaan;
+	}
+
+	public static function find_by_id($id){
+		$pertanyaan=DB::table('pertanyaan')->where('id', $id)->first();
+		return $pertanyaan;
+	}
+
+	public static function update($id, $request){
+		$pertanyaan = DB::table('pertanyaan')
+						->where('id', $id)
+						->update([
+							'pemberi_pertanyaan' => $request["pemberi_pertanyaan"],
+							'judul' => $request["judul"],
+							'isi' => $request["isi"],
+						]);
+		return $pertanyaan;
 	}
 
 }

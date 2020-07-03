@@ -39,4 +39,9 @@ class PertanyaanController extends Controller
         $pertanyaan=PertanyaanModel::update($id, $request->all());
         return redirect('/pertanyaan');
     }
+
+     public function destroy($id){
+        $pertanyaan=PertanyaanModel::destroy($id);
+        return redirect('/pertanyaan');
+    }
 }

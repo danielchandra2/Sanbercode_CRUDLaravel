@@ -24,6 +24,11 @@
                         <td>
                           <a href="/pertanyaan/{{ $pertanyaan->id }}" class="btn btn-sm btn-info">Detail Pertanyaan</a>
                           <a href="/pertanyaan/{{ $pertanyaan->id }}/edit" class="btn btn-sm btn-default">Edit Pertanyaan</a>
+                          <form action="/pertanyaan/{{ $pertanyaan->id }}" method="post" style="display:inline">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                          </form>
                         </td>
                       </tr>
                     @endforeach

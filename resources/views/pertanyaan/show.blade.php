@@ -20,7 +20,7 @@
                 <div class="card-body">
                   <div class="form-group">
                     <label for="id_pertanyaan">Id Pertanyaan</label>
-                    <input class="form-control" id="id_pertanyaan" name='id_pertanyaan' value="{{ $pertanyaan->id }}" placeholder="Masukkan Nama ...." type="number">
+                    <input class="form-control" id="id_pertanyaan" name='id_pertanyaan' value="{{ $pertanyaan->id }}" placeholder="Masukkan Nama ...." type="number" >
                   </div>
                   <div class="form-group">
                     <label for="pemberi_jawaban">Nama</label>

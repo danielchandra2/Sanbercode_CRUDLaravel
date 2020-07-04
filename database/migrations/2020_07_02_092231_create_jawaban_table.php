@@ -17,6 +17,7 @@ class CreateJawabanTable extends Migration
             $table->bigIncrements('id');
             //$table->integer('soal_id')->unsigned();
             //$table->foreign('soal_id')->references('id')->on('pertanyaan');
+            $table->integer('id_pertanyaan');
             $table->string('pemberi_jawaban');
             $table->string('isi');
             $table->timestamps();

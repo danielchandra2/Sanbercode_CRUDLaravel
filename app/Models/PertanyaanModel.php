@@ -39,6 +39,6 @@ class PertanyaanModel{
 					->delete();
 		return $deleted;
 	}
-}
+} 
 
  ?>
